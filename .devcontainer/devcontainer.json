@@ -1,8 +1,8 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"image": "ghcr.io/andreilgeorgescu/devcontainer-base:2",
 	"features": {
 		"ghcr.io/devcontainers/features/terraform:1": {}
 	},
-  "postStartCommand": "echo \"$GCP_SERVICE_ACCOUNT_KEY\" | base64 --decode > /tmp/gcp_keyfile.json && echo \"$GCP_PROJECT_ID\" > terraform.tfvars",
-  "updateContentCommand": "terraform init"
+  "updateContentCommand": "bash .devcontainer/scripts/updateContentCommand.bash",
+  "postStartCommand": "bash .devcontainer/scripts/postStartCommand.bash"
 }

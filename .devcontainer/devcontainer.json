@@ -1,0 +1,7 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/devcontainers/features/terraform:1": {}
+	},
+  "postStartCommand": "echo '$GCP_SERVICE_ACCOUNT_KEY' > /tmp/gcp_keyfile.json && export TF_VAR_project_id='$GCP_PROJECT_ID'"
+}

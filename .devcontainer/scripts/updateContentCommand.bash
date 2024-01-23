@@ -1,5 +1,5 @@
 {
 	echo "\n"
-	curl https://www.toptal.com/developers/gitignore/api/terraform,terragrunt
+	curl https://www.toptal.com/developers/gitignore/api/terraform
 } >>.gitignore
 terraform init

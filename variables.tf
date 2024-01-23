@@ -1,17 +1,29 @@
-variable "gcp_keyfile_path" {
-  type = string
+variable "gcp_project_id" {
+  type      = string
+  sensitive = true
 }
 
-variable "gcp_project_id" {
+variable "gcp_service_account_key" {
+  type      = string
+  sensitive = true
+}
+
+variable "organization" {
   type = string
 }
 
 variable "region" {
-  type    = string
-  default = "us-central1"
+  type = string
 }
 
 variable "zone" {
-  type    = string
-  default = "us-central1-c"
+  type = string
+}
+
+variable "workspace_name" {
+  type = string
+}
+
+variable "workspace_project" {
+  type = string
 }

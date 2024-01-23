@@ -4,5 +4,4 @@
     "ghcr.io/devcontainers/features/terraform:1": {},
   },
   "updateContentCommand": "curl -s https://raw.githubusercontent.com/andreilgeorgescu/terraform/main/.devcontainer/scripts/updateContentCommand.bash | bash",
-  "postStartCommand": "curl -s https://raw.githubusercontent.com/andreilgeorgescu/terraform/main/.devcontainer/scripts/postStartCommand.bash | bash",
 }

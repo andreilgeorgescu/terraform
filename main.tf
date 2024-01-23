@@ -1,26 +1,26 @@
 terraform {
   cloud {
-    organization = "riverwalk-software"
+    organization = var.organization
 
     workspaces {
-      name = "test-cli"
+      name    = var.workspace_name
+      project = var.workspace_project
     }
   }
+
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 5.12"
+    }
+  }
+
+  required_version = "~> 1.7"
 }
 
-# terraform {
-#   required_providers {
-#     google = {
-#       source  = "hashicorp/google"
-#       version = "~> 5.12"
-#     }
-#   }
-# }
-
-# provider "google" {
-#   credentials = file(var.gcp_keyfile_path)
-
-#   project = var.gcp_project_id
-#   region  = var.region
-#   zone    = var.zone
-# }
+provider "google" {
+  credentials = base64decode(var.gcp_service_account_key)
+  project     = var.gcp_project_id
+  region      = var.region
+  zone        = var.zone
+}

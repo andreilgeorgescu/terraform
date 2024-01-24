@@ -1,13 +1,4 @@
 terraform {
-  # cloud {
-  #   organization = "riverwalk-software"
-
-  #   workspaces {
-  #     name    = "development"
-  #     project = "lungspace"
-  #   }
-  # }
-
   required_providers {
     google = {
       source  = "hashicorp/google"
@@ -25,6 +16,14 @@ provider "google" {
   zone        = var.zone
 }
 
-resource "google_compute_network" "vpc_network" {
-  name = "terraform-network2"
+resource "google_cloud_run_v2_service" "default" {
+  name     = "cloudrun-service"
+  location = "us-central1"
+  ingress  = "INGRESS_TRAFFIC_ALL"
+
+  template {
+    containers {
+      image = "us-docker.pkg.dev/cloudrun/container/hello"
+    }
+  }
 }

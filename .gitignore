@@ -88,8 +88,8 @@ zsdoc/data
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,git,zsh,visualstudiocode
 \n
-# Created by https://www.toptal.com/developers/gitignore/api/terraform,terragrunt
-# Edit at https://www.toptal.com/developers/gitignore?templates=terraform,terragrunt
+# Created by https://www.toptal.com/developers/gitignore/api/terraform
+# Edit at https://www.toptal.com/developers/gitignore?templates=terraform
 
 ### Terraform ###
 # Local .terraform directories
@@ -127,12 +127,4 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-### Terragrunt ###
-# terragrunt cache directories
-**/.terragrunt-cache/*
-
-# Terragrunt debug output file (when using `--terragrunt-debug` option)
-# See: https://terragrunt.gruntwork.io/docs/reference/cli-options/#terragrunt-debug
-terragrunt-debug.tfvars.json
-
-# End of https://www.toptal.com/developers/gitignore/api/terraform,terragrunt
+# End of https://www.toptal.com/developers/gitignore/api/terraform

@@ -1,12 +1,12 @@
 terraform {
-  cloud {
-    organization = var.organization
+  # cloud {
+  #   organization = "riverwalk-software"
 
-    workspaces {
-      name    = var.workspace_name
-      project = var.workspace_project
-    }
-  }
+  #   workspaces {
+  #     name    = "development"
+  #     project = "lungspace"
+  #   }
+  # }
 
   required_providers {
     google = {
@@ -23,4 +23,8 @@ provider "google" {
   project     = var.gcp_project_id
   region      = var.region
   zone        = var.zone
+}
+
+resource "google_compute_network" "vpc_network" {
+  name = "terraform-network"
 }
